@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Panel</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <h2>Add Student</h2>
+        <form id="add-st">
+          <label for="firstName"></label>
+          <input type="text" placeholder="First Name" id="firstName" />
+          <label for="lastName"></label>
+          <input type="text" placeholder="Last Name" id="lastName" />
+          <label for="group"></label>
+          <input type="text" placeholder="Group" id="group" />
+          <div style="display: flex; align-items: center; gap: 10px">
+            <input type="checkbox" id="works" />
+            <label for="works">Works</label>
+          </div>
+          <button type="submit" id="add">Add</button>
+        </form>
+      </div>
+    </div>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-edit-modal" class="close-btn">&times;</span>
+        <h2>Edit Item</h2>
+        <form id="edit-form">
+          <label for="first-name">First Name:</label>
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="Enter First Name"
+            required
+          />
+
+          <label for="last-name">Last Name:</label>
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Enter Last Name"
+            required
+          />
+
+          <label for="group">Group:</label>
+          <input
+            type="text"
+            id="group"
+            name="group"
+            placeholder="Enter Group"
+            required
+          />
+
+          <label for="status">Status:</label>
+          <select id="status" name="status" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <button type="submit" id="save-changes">Save Changes</button>
+        </form>
+      </div>
+    </div>
+    <header>
+      <input type="text" placeholder="Search" class="search-bar" id="search" />
+      <select name="" class="select" id="">
+        <option value="All">All</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+      <div class="btns">
+        <button type="button" class="dark-light" id="toggle-mode">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button class="lang" id="toggle-lang">
+          <i class="fa-solid fa-globe"></i>
+        </button>
+      </div>
+      <button class="add" id="open-modal">
+        Add Student
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 50px !important">N</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Guruhi</th>
+          <th>Ishlaydimi?</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </body>
+
+  <script src="./js/components.js"></script>
+  <script src="./js/app.js"></script>
+
+</html>
