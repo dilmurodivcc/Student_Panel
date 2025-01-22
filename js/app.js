@@ -42,6 +42,8 @@ addForm.addEventListener("submit", (e) => {
   getS();
   e.target.reset();
   saveToLc();
+  modal.style.display = 'none';
+
 });
 
 function saveToLc() {
