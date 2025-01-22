@@ -19,10 +19,19 @@
         <span id="close-modal" class="close-btn">&times;</span>
         <h2>Add Student</h2>
         <form id="add-st">
-          <input type="text" placeholder="First Name" id="firstName" />
-          <input type="text" placeholder="Last Name" id="lastName" />
-          <select style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.2);" style="" name="" id="group" required>
-            <option value="1 - guruh">1-guruh</option>
+          <input type="text" placeholder="First Name" id="firstName" required />
+          <input type="text" placeholder="Last Name" id="lastName" required />
+          <select
+            style="
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            style=""
+            name=""
+            id="group"
+            required
+          >
+            <option value="1 - guruh" selected>1-guruh</option>
             <option value="2 - guruh">2-guruh</option>
             <option value="3 - guruh">3-guruh</option>
             <option value="4 - guruh">4-guruh</option>
@@ -35,7 +44,6 @@
         </form>
       </div>
     </div>
-
     <div id="edit-modal" class="modal">
       <div class="modal-content">
         <span id="close-edit-modal" class="close-btn">&times;</span>
@@ -55,12 +63,21 @@
             placeholder="Enter Last Name"
             required
           />
-   
-          <select style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.2);" style="" name="" id="group_edit" required>
+
+          <select
+            style="
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            style=""
+            name=""
+            id="group_edit"
+            required
+          >
             <option value="Hammasi">Hammasi</option>
-            <option value="2-guruh">2-guruh</option>
-            <option value="3-guruh">3-guruh</option>
-            <option value="4-guruh">4-guruh</option>
+            <option value="2 - guruh">2-guruh</option>
+            <option value="3 - guruh">3-guruh</option>
+            <option value="4 - guruh">4-guruh</option>
           </select>
           <div style="display: flex; align-items: center; gap: 10px">
             <input type="checkbox" id="edit_works" />
@@ -73,11 +90,11 @@
     </div>
     <header>
       <input type="text" placeholder="Search" class="search-bar" id="search" />
-      <select name="" class="select" id="">
-        <option value="All" selected>Hammasi</option>
-        <option value="second">2-guruh</option>
-        <option value="third">3-guruh</option>
-        <option value="fourth">4-guruh</option>
+      <select name="" class="select" id="filter_group">
+        <option value="1 - guruh" selected>1-guruh</option>
+        <option value="2 - guruh">2-guruh</option>
+        <option value="3 - guruh">3-guruh</option>
+        <option value="4 - guruh">4-guruh</option>
       </select>
       <div class="btns">
         <button type="button" class="dark-light" id="toggle-mode">

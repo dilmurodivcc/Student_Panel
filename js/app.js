@@ -2,6 +2,7 @@ const tableBody = document.getElementById("table-body");
 const searchInput = document.getElementById("search");
 const addForm = document.getElementById("add-st");
 const EdM = document.getElementById("edit-modal");
+const filter = document.getElementById("filter_group");
 const closeEditModalBtn = document.getElementById("close-edit-modal");
 const editForm = document.getElementById("edit-form");
 let students = getLc();
@@ -121,3 +122,31 @@ editForm.addEventListener("submit", (e) => {
     e.target.reset();
   }
 });
+
+
+
+function filterByGroup() {
+  const selectedGroup = filter.value;
+  const filteredStudents = students.filter((student) => {
+    return student.group === selectedGroup;
+  });
+  tableBody.innerHTML = "";
+  filteredStudents.forEach((student, index) => {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `
+     <td>${index + 1}</td>
+     <td>${student.firstName}</td>
+     <td>${student.lastName}</td>
+     <td>${student.group}</td>
+     <td>${student.works ? "Ha" : "Yo'q"}</td>
+     <td>
+       <button style="box-shadow: 0 0 7px orange" onclick="openEditModal(${index})">
+         <i class="fa-solid fa-pen-to-square"></i>
+       </button>
+       <button style="box-shadow: 0 0 7px red" onclick="deleteStudent(${index})">
+         <i class="fa-solid fa-trash"></i>
+       </button>
+     </td>`;
+    tableBody.appendChild(tr);
+  });
+}
